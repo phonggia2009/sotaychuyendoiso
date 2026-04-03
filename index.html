@@ -230,21 +230,6 @@
     </style>
 </head>
 <body>
-
-    <script src="https://cdnc.heyzine.com/release/addons.5.min.js"></script>
-
-<script>
-document.getElementById("openBook").addEventListener("click", function(e) {
-  e.preventDefault();
-
-  if (window.heyzinea) {
-    heyzinea.open(this.href); // ép mở modal
-  } else {
-    window.open(this.href, "_blank"); // fallback
-  }
-});
-</script>
-
     <div class="book-cover">
         <div class="book-spine"></div>
 
@@ -276,6 +261,18 @@ document.getElementById("openBook").addEventListener("click", function(e) {
             Mời bạn bấm nút để xem sổ tay
         </div>
     </div>
+    <script src="https://cdnc.heyzine.com/release/addons.5.min.js"></script>
 
+<script>
+document.getElementById("openBook").addEventListener("click", function(e) {
+  e.preventDefault();
+
+  if (window.heyzinea) {
+    heyzinea.open(this.href); // ép mở modal
+  } else {
+    window.open(this.href, "_blank"); // fallback
+  }
+});
+</script>
 </body>
 </html>
