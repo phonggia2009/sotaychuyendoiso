@@ -232,13 +232,18 @@
 <body>
 
     <script src="https://cdnc.heyzine.com/release/addons.5.min.js"></script>
-    <script>
-        window.addEventListener("load", function () {
-            if (window.heyzinea) {
-                heyzinea.addons.init();
+
+        <script>
+        function initHeyzine() {
+            if (window.heyzinea && heyzinea.addons) {
+            heyzinea.addons.init();
+            } else {
+            setTimeout(initHeyzine, 300); // retry nếu chưa load
             }
-        });
-    </script>
+        }
+
+        window.addEventListener("load", initHeyzine);
+        </script>
 
     <div class="book-cover">
         <div class="book-spine"></div>
@@ -260,7 +265,7 @@
         <div class="gold-text title-sub">CHUYỂN ĐỔI SỐ XÃ SƠN ĐỒNG</div>
 
         <div class="glass-panel">
-            <a href="https://heyzine.com/flip-book/3004134edc.html" target="_BLANK" class="heyzine-link fp-link btn-open" data-heyzine-open="modal">
+            <a href="https://heyzine.com/flip-book/3004134edc.html" class="heyzine-link fp-link btn-open" data-heyzine-open="modal">
                 <i class="fas fa-book-open"></i> Mở sổ tay
             </a>
         </div>
