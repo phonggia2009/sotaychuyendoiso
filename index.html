@@ -231,7 +231,14 @@
 </head>
 <body>
 
-    <script src="https://cdnc.heyzine.com/release/addons.5.min.js" style="display:none;" onload="heyzinea.addons.init();"></script>
+    <script src="https://cdnc.heyzine.com/release/addons.5.min.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            if (window.heyzinea) {
+                heyzinea.addons.init();
+            }
+        });
+    </script>
 
     <div class="book-cover">
         <div class="book-spine"></div>
