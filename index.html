@@ -233,20 +233,17 @@
 
     <script src="https://cdnc.heyzine.com/release/addons.5.min.js"></script>
 
-        <script>
-        function initHeyzineSafe() {
-        if (window.heyzinea && heyzinea.addons) {
-            heyzinea.addons.init();
-            console.log("Heyzine init OK");
-        } else {
-            setTimeout(initHeyzineSafe, 300);
-        }
-        }
+<script>
+document.getElementById("openBook").addEventListener("click", function(e) {
+  e.preventDefault();
 
-        document.addEventListener("DOMContentLoaded", function () {
-        initHeyzineSafe();
-        });
-        </script>
+  if (window.heyzinea) {
+    heyzinea.open(this.href); // ép mở modal
+  } else {
+    window.open(this.href, "_blank"); // fallback
+  }
+});
+</script>
 
     <div class="book-cover">
         <div class="book-spine"></div>
@@ -268,9 +265,11 @@
         <div class="gold-text title-sub">CHUYỂN ĐỔI SỐ XÃ SƠN ĐỒNG</div>
 
         <div class="glass-panel">
-            <a href="https://heyzine.com/flip-book/3004134edc.html" class="heyzine-link btn-open" data-heyzine-open="modal">
-                <i class="fas fa-book-open"></i> Mở sổ tay
-            </a>
+           <a href="https://heyzine.com/flip-book/3004134edc.html"
+   class="btn-open"
+   id="openBook">
+   <i class="fas fa-book-open"></i> Mở sổ tay
+</a>
         </div>
 
         <div class="instruction">
